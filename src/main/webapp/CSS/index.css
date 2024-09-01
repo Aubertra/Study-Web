@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "朱元体";
+    src: url("../资源/朱元体.ttf");
+}
+
+body {
+    overflow: auto;
+    font-family: "朱元体", sans-serif;
+    height: 100%;
+}
+
+.BackGround {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Scroll */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* StateBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.StateBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    height: 2em;
+    width: 100em;
+    line-height: 2em;
+    border-radius: 0.2em/0.2em;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 254, 247, 0.8), rgba(255, 248, 213, 0.8), rgba(255, 224, 71, 0.8), rgba(255, 213, 0, 0.8));
+    /* background: linear-gradient(rgba(255, 255, 255,0.8),rgba(176, 176, 176, 0.8),rgba(120, 120, 120, 0.8),rgba(57, 57, 57, 0.8),rgba(0, 0, 0, 0.8)); */
+    background-size: 500vh;
+    animation: StateBarAnimation 5s linear infinite;
+    z-index: 1;
+}
+
+@keyframes StateBarAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+header {
+    height: 2em;
+}
+
+.StateBar a{
+    color: black;
+    text-decoration-line: none;
+}
+
+/* DividerBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.DividerBar {
+    height: 1.5em;
+}
+
+/* NavigationBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.NavigationBar {
+    position: absolute;
+    width: 90em;
+    height: 30em;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0.2em/0.2em;
+}
+
+/* sidePage */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.sidePage {
+    display: inline-block;
+    overflow: hidden;
+    height: 30em;
+    width: 15em;
+    border-radius: 0.2em/0.2em;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.rightChoiceBar {
+    height: 4em;
+}
+
+.rightChoiceButton {
+    left: 0;
+    top: 0;
+    border-radius: 0.2em/0.2em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 7.36em;
+    line-height: 3.95em;
+    height: 3.96em;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.rightMapBar {
+    border-radius: 0.2em/0.2em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 15em;
+    height: 26em;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ChoiceButton {
+    display: none;
+}
+
+.ChoiceButton:checked+.rightChoiceButton {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.webPage {
+    height: 25em;
+    display: block;
+    padding: 0.2em;
+}
+
+.gamePage {
+    display: none;
+    padding: 2em;
+}
+
+article {
+    font-size: 1em;
+    height: 23em;
+    line-height: 1.2em;
+}
+
+.finalSign {
+    text-align: right;
+}
+
+li {
+    position: relative;
+    left: -1em;
+    list-style-type: none;
+    background: url("../资源/li-tag.png") no-repeat 0em 0.1em;
+    background-size: 0.9em 0.9em;
+    text-indent: 1em;
+    height: 1.5em;
+    line-height: 1.05em;
+}
+
+li a {
+    color: black;
+    text-decoration-line: none;
+}
+
+li a:hover {
+    color: orange;
+    text-decoration-line: underline;
+}
+
+li a:active {
+    color: red;
+    text-decoration-line: none;
+}
+
+.visited {
+    color: grey;
+    text-decoration-line: line-through;
+}
+
+/* DetailsPage */
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+.DetailsPage{
+    position: absolute;
+    left: 15em;
+    top: 0em;
+    height: 30em;
+    width: 20em;
+    z-index: 1;
+}
+
+.ContentPage
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    margin: 0;
+}
+
+.ContentPage table
+{
+    width: 100%;
+}
+
+.ContentPage td
+{
+    width: 25%;
+}
+
+.ContentPage a{
+    position: relative;
+    text-decoration-line: none;
+    left: 2.5em;
+    top:1em;
+    color: white;
+}
+
+.ContentPage a:active{
+    position: relative;
+    text-decoration-line: underline;
+    left: 2.5em;
+    top:1em;
+    color: red;
+}
+
+/* left */
+/* ---------------------------------------------------------------------------------------------------------------------------------------- */
+.leftChoiceButton {
+    height: 7.5em;
+    width: 15em;
+    line-height: 7.5em;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 0.2em/0.2em;
+}
+
+.ChoiceButton:hover+.leftChoiceButton {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.leftChoiceButton a{
+    text-decoration-line: none;
+    color: black;
+}
+
+/* mainPage */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.mainPage {
+    display: inline-block;
+    overflow: hidden;
+    height: 30em;
+    width: 59em;
+    border-radius: 0.2em/0.2em;
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.imageScroll {
+    display: flex;
+    width: 200%;
+    animation: Scoll 15s linear infinite;
+}
+
+.imageScroll img {
+    width: 50%;
+    height: 100%;
+}
+
+@keyframes Scoll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-50%);
+    }
+
+    45% {
+        transform: translateX(-50%);
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+
+    70% {
+        transform: translateX(0%);
+    }
+
+    75% {
+        transform: translateX(-50%);
+    }
+
+    95% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* BrowingBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.BrowingBar {
+    position: absolute;
+    width: 90em;
+    height: 30em;
+    margin: auto;
+    top: 35.5em;
+    left: 0;
+    right: 0;
+    border-radius: 0.2em/0.2em;
+    background-color: rgba(245, 245, 245, 0.8);
+}

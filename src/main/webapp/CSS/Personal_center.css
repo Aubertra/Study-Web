@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "朱元体";
+    src: url("../资源/朱元体.ttf");
+}
+
+body {
+    overflow: auto;
+    font-family: "朱元体", sans-serif;
+    height: 100%;
+}
+
+.BackGround {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* StateBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.StateBar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    height: 2em;
+    width: 100em;
+    line-height: 2em;
+    border-radius: 0.2em/0.2em;
+    text-align: center;
+    background: linear-gradient(rgba(255, 255, 255,0.8),rgba(255, 254, 247, 0.8),rgba(255, 248, 213, 0.8),rgba(255, 224, 71, 0.8),rgba(255, 213, 0, 0.8));
+    /* background: linear-gradient(rgba(255, 255, 255,0.8),rgba(176, 176, 176, 0.8),rgba(120, 120, 120, 0.8),rgba(57, 57, 57, 0.8),rgba(0, 0, 0, 0.8)); */
+    background-size: 500vh;
+    animation: StateBarAnimation 5s linear infinite;
+    z-index: 2;
+}
+
+@keyframes StateBarAnimation
+{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+header{
+    height: 2em;
+}
+
+/* DividerBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.DividerBar {
+    height: 1.5em;
+}
+
+/*MainPage*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.mainPage{
+    width: 100em;
+    height: 45em;
+    background: rgba(255,255,255,0.8);
+    border-radius: 0.2em/0.2em;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.Avatar_frame{
+    width: 15em;
+    height: 15em;
+    background: white;
+    border-radius: 0.2em/0.2em;
+}
+
+.MenuBar{
+    width: 15em;
+    height: 29.8em;
+    background: white;
+    border-radius: 0.2em/0.2em;
+}
+
+.Operation_interface{
+    width: 70em;
+    height: 45em;
+    background: white;
+    border-radius: 0.2em/0.2em;
+}
+
+.Historical_records{
+    width: 15em;
+    height: 45em;
+    background: white;
+    border-radius: 0.2em/0.2em;
+}
+
+/*Avatar_frame*/
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.Avatar{
+    display: table;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+}
+
+.NameBar{
+    width: 100%;
+    height: 30%; 
+    text-align: center;
+    line-height: 4.5em;
+}
+
+.Head{
+    display: table-cell;
+    width: 50%;
+    height: 70%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.Headimg{
+    width: 50%;
+    height: 70%;
+    border-radius: 50%;
+}
+
+/*MenuBar*/
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.rightChoiceButton{
+    width: 15em;
+    height: 5em;
+    text-align: center;
+    line-height: 5em;
+}
+
+.ChoiceButton{
+    display: none;
+}
+
+.ChoiceButton:checked+.rightChoiceButton {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*Operation_interface*/
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.interface{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.Management_ChoiceButton{
+    width: 8em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    display: inline-block;
+    background-color: darkgray;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+.ChoiceButton:checked + .Management_ChoiceButton{
+    color: white;
+    background-color: black;
+}
+
+.Management_Map{
+    width: 100%;
+    height: 10em;
+    background-color: black;
+    border-top-right-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    border-bottom-left-radius: 0.2em;
+    color: white;
+}
+
+.Summary_Button{
+    text-align: center;
+    line-height: 5em;
+    width: 100%;
+    height: 13%;
+}
+
+.Operation_Area form{
+    text-align: center;
+}
+
+#Member_Information_Management_ResultArea{
+    text-align: center;
+}
+
+#Goods_Information_Management_ResultArea{
+    text-align: center;
+}
+
+#Visitor_Information_Management_ResultArea{
+    text-align: center;
+    overflow: auto;
+    height: 6em;
+}
+
+/*scrollbar*/
+/*----------------------------------------------------------------------------------------------------------------------*/
+::-webkit-scrollbar
+{
+    display: none;
+}

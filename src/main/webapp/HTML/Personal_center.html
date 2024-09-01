@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Personal_center.css">
+    <title>Air_Stack个人中心</title>
+</head>
+
+<body>
+    <div class="BackGround">
+        <video loop autoplay muted>
+            <source src="../资源/动漫星空.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="BGmusic" src="../资源/重复时.mp3" loop autoplay></audio>
+
+    <header>
+        <div class="StateBar">
+            Air_Stack个人中心
+        </div>
+    </header>
+    <div class="DividerBar"></div>
+    <div class="mainPage">
+        <table>
+            <tr>
+                <td>
+                    <div class="Avatar_frame">
+                        <div class="Avatar">
+                            <span class="Head">
+                                <img src="../资源/Air_Stack概念海报1.webp" class="Headimg">
+                            </span>
+                        </div>
+                        <div class="NameBar">
+                            host
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div class="Operation_interface">
+<!--                        页面一-->
+                        <div class="interface" id="Managerial_System_interface">
+                            成员信息管理<br>
+                            <div>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Member_Information_Management" value="query" checked>
+                                    <div class="Management_ChoiceButton">
+                                        查询成员信息
+                                    </div>
+                                </label>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Member_Information_Management" value="add">
+                                    <div class="Management_ChoiceButton">
+                                        添加成员信息
+                                    </div>
+                                </label>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Member_Information_Management" value="delete">
+                                    <div class="Management_ChoiceButton">
+                                        删除成员信息
+                                    </div>
+                                </label>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Member_Information_Management" value="chance">
+                                    <div class="Management_ChoiceButton">
+                                        变更成员信息
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="Management_Map">
+                                <div class="Operation_Area">
+                                    <form id="Member_Information_Management_Form">
+                                    <input id="Member_Information_Management_Form_type" name="type" style="display: none" >
+                                    用户名:<input type="text" name="username"><br>
+                                    <button id="Member_Information_Submit" >确认操作</button>
+                                    </form>
+                                </div>
+                                <div class="Result_Area">
+                                    结果区域
+                                    <div id="Member_Information_Management_ResultArea">
+                                    </div>
+                                </div>
+                            </div>
+                            商品信息（库存）管理<br>
+                            <div>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Goods_Information_Management" value="query" checked>
+                                    <div class="Management_ChoiceButton">
+                                        查询商品信息
+                                    </div>
+                                </label>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Goods_Information_Management" value="add">
+                                    <div class="Management_ChoiceButton">
+                                        导入商品信息
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="Management_Map">
+                                <div class="Operation_Area">
+                                    <form id="Goods_Information_Management_Form">
+                                        <input id="Goods_Information_Management_Form_type" name="type" style="display: none" >
+                                        商品名:<input type="text" name="goodsname"><br>
+                                        <button id="Goods_Information_Submit" >确认操作</button>
+                                    </form>
+                                </div>
+                                <div class="Result_Area">
+                                    结果区域
+                                    <div id="Goods_Information_Management_ResultArea">
+                                    </div>
+                                </div>
+                            </div>
+                            顾客购物与订单管理<br>
+                            <div>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Visitor_Information_Management" value="visit_query" checked>
+                                    <div class="Management_ChoiceButton">
+                                        顾客购物信息
+                                    </div>
+                                </label>
+                                <label>
+                                    <input type="radio" class="ChoiceButton" name="Visitor_Information_Management" value="order_query">
+                                    <div class="Management_ChoiceButton">
+                                        订单信息管理
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="Management_Map">
+                                <div class="Operation_Area">
+                                    <form id="Visitor_Information_Management_Form">
+                                        <input id="Visitor_Information_Management_Form_type" name="type" style="display: none" >
+                                        顾客名:<input type="text" name="visitorname"><br>
+                                        <button id="Visitor_Information_Submit" >确认操作</button>
+                                    </form>
+                                </div>
+                                <div class="Result_Area">
+                                    结果区域
+                                    <div id="Visitor_Information_Management_ResultArea">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Summary_Button">
+                                <form action="/Order-Servlet" method="post">
+                                    <button name="type" value="Summary">
+                                        <p style="font-family: '朱元体', sans-serif">销售情况汇总导出</p>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+<!--                        页面二-->
+                        <div class="interface" id="Other_System_interface">
+
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="2">
+                    <div class="Historical_records">
+                        <div style="text-align: center">
+                            历史记录
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="MenuBar">
+                        <label style="display: block;">
+                            <input type="radio" class="ChoiceButton" name="ChoiceMap" value="Managerial_System_interface" checked>
+                            <div class="rightChoiceButton" id="Managerial_System" >
+                            管理系统
+                            </div>
+                        </label>
+                        <label style="display: block;">
+                            <input type="radio" class="ChoiceButton" name="ChoiceMap" value="Other_System_interface">
+                            <div class="rightChoiceButton" id="02" >
+                                其余系统
+                            </div>
+                        </label>
+                     </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+<script src="../JS/Personal_center.js"></script>
+
+</html>

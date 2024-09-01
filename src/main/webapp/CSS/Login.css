@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "朱元体";
+    src: url("../资源/朱元体.ttf");
+}
+
+body {
+    font-family: "朱元体", sans-serif;
+    text-align: center;
+    height: 100%;
+}
+
+.BackGround {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.title{
+    color: transparent;
+    background: linear-gradient(white,orange,black);
+    background-size: 500vh;
+    animation: LoginButtonAnimation 5s linear infinite;
+    background-clip: text;
+    font-size: 8em;
+    transform: translateY(250%);
+}
+
+.LoginBar{
+    
+    width: 16em;
+    text-align: center;
+    font-size: 1.5em;
+    margin: auto;
+    left: 0;
+    right: 0;
+    transform: translateY(300%);
+}
+
+.LoginButton{
+    border: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 254, 247, 0.8), rgba(255, 248, 213, 0.8), rgba(255, 224, 71, 0.8), rgba(255, 213, 0, 0.8));
+    background-size: 500vh;
+    animation: LoginButtonAnimation 5s linear infinite;
+    padding: 0.5em 1em;
+    font-size: large;
+    font-family: "朱元体", sans-serif;
+    border-radius: 0.2em;
+}
+
+@keyframes LoginButtonAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air_Stack登录</title>
+    <link rel="stylesheet" href="../CSS/Login.css">
+</head>
+
+<body>
+    <div class="BackGround">
+        <video loop autoplay muted>
+            <source src="../资源/动漫星空.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="BGmusic" src="../资源/重复时.mp3" loop autoplay></audio>
+
+    <div class="title">Air Stack</div>
+    
+   <div class="LoginBar">
+       <form action="/login-servlet" method="post">
+           <label>
+               用户名:<input type="text" name="username"><br>
+               密　码:<input type="password" name="password" ><br>
+           </label><br>
+           <button class="LoginButton" type="submit" value="submit">登　录</button>
+       </form>
+   </div>
+</body>
+
+</html>

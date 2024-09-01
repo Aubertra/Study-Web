@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <title>Air_Stack企划网站</title>
+</head>
+
+<body>
+    <div class="BackGround">
+        <video loop autoplay muted>
+            <source src="../资源/动漫星空.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="BGmusic" src="../资源/重复时.mp3" loop autoplay></audio>
+
+    <header>
+        <div class="StateBar">
+            Air_Stack
+            <div style="float: right;width: 5em">
+                <a href="Personal_center.html">个人中心</a>
+            </div>
+        </div>
+    </header>
+    <div class="DividerBar"></div>
+    <div class="NavigationBar">
+        <div class="sidePage">
+            <label style="display: block;">
+                <input type="radio" class="ChoiceButton" name="leftChoiceButton" value="DataBase">
+                <div class="leftChoiceButton">
+                    数据库信息
+                    mySql
+                    Navicat
+                </div>
+            </label>
+            <label style="display: block;">
+                <input type="radio" class="ChoiceButton" name="leftChoiceButton" value="Tomcat_Servlet">
+                    <div class="leftChoiceButton">
+                        服务器
+                        TomCat
+                    </div>
+            </label>
+            <label style="display: block;">
+                <input type="radio" class="ChoiceButton" name="leftChoiceButton" value="IDEA_Servlet">
+                <div class="leftChoiceButton">
+                    后端服务处理
+                    IDEA
+                </div>
+            </label>
+            <label style="display: block;">
+                <input type="radio" class="ChoiceButton" name="leftChoiceButton" value="Javascript">
+                <div class="leftChoiceButton">
+                    前端页面响应
+                    Javascript
+                </div>
+            </label>
+        </div>
+        <div class="DetailsPage">
+            <div id="Javascript" class="ContentPage" style="display: none;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="JavaScript_mode.html" target="_blank">DOM元素</a>
+                            </td>
+                            <td rowspan="2">
+                                <a href="JavaScript_mode.html" target="_blank">BOM元素</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="DataBase" class="ContentPage" style="display: none;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="Database_Theory.html" target="_blank">数据库理论</a>
+                            </td>
+                            <td rowspan="2">
+                                <a href="Database_Theory.html" target="_blank">SQL语句</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mainPage">
+            <div class="imageScroll">
+                <img src="../资源/Air_Stack概念海报1.webp" alt="1">
+                <img src="../资源/Air_Stack概念海报2.webp" alt="2">
+            </div>
+        </div>
+
+        <div class="sidePage">
+            <div class="rightChoiceBar">
+                <table>
+                    <thead style="position: relative;;left: -0.15em;top: -0.15em;">
+                        <th>
+                            <label>
+                                <input type="radio" class="ChoiceButton" name="rightChoiceButton" value="web" checked>
+                                <div class="rightChoiceButton">网址公告</div>
+                            </label>
+                        </th>
+                        <th>
+                            <label>
+                                <input type="radio" class="ChoiceButton" name="rightChoiceButton" value="game">
+                                <div class="rightChoiceButton">游戏脚本</div>
+                            </label>
+                        </th>
+                    </thead>
+                </table>
+            </div>
+            <div class="rightMapBar">
+                <table>
+                    <td>
+                        <div class="webPage" id="webPage">
+                            <article>
+                                <p>Air_Stack企划网站主页日志:</p>
+                                <p>拟建于5.13号</p>
+                                <p>由个人企划的单位网站，用于交流与学习相关技术知识。内容包括但不限于游戏脚本开发，算法优化，图像渲染，数据存储等。</p>
+                            </article>
+                            <footer class="finalSign">by Air_Stack</footer>
+                        </div>
+                        <div class="gamePage" id="gamePage">
+                            <ul>
+                                <li><a class="link" href="gameScript_mode.html" target="_blank">游戏脚本模型</a></li>
+                                <li><a class="link" href="#01">游戏开发规划</a></li>
+                                <li><a class="link" href="#02"></a></li>
+                                <li><a class="link" href="#03"></a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="BrowingBar">
+
+    </div>
+</body>
+<script src="../JS/index.js"></script>
+
+</html>

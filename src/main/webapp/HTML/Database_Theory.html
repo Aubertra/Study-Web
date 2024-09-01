@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Database_Theory.css">
+    <title>数据库操作理论</title>
+</head>
+<body>
+    <div class="BackGround">
+        <video loop autoplay muted>
+            <source src="../资源/动漫星空.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="BGmusic" src="../资源/重复时.mp3" loop autoplay></audio>
+
+    <header>
+        <div class="StateBar">
+            Air_Stack
+        </div>
+    </header>
+    <div class="BG"></div>
+    <div class="MainPage">
+        <article>
+            <h1>数据库理论</h1>
+            <p>&nbsp;</p>
+            <h2>一. 关系代数</h2>
+            <p>&nbsp;</p>
+            <h3>1.集合运算符</h3>
+            <table>
+                <tr>
+                    <td><b>并</b>∪:</td>
+                    <td>R<b>∪</b>S,即R集合加上S集合去掉重复的元素的元素集</td>
+                </tr>
+                <tr>
+                    <td><b>交</b>∩:</td>
+                    <td>R<b>∩</b>S,即同时属于R集合与S集合的元素集</td>
+                </tr>
+                <tr>
+                    <td><b>差</b>-:</td>
+                    <td>R<b>-</b>S,即属于R集合且不属于S集合的元素集</td>
+                </tr>
+                <tr>
+                    <td><b>笛卡尔积</b>×:</td>
+                    <td>R<b>×</b>S,即由R集合中的每个元组与S集合中的所有元组进行组合得到的元素集</td>
+                </tr>
+            </table>
+            <h3>2.关系运算符</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 5em;"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><b>选择</b>σ:</td>
+                    <td>σ<sub><u>条件</u></sub>(表名): 获取表中指定行</td>
+                </tr>
+                <tr>
+                    <td><b>投影</b>π:</td>
+                    <td>π<sub><u>条件</u></sub>(表名): 获取表中指定列</td>
+                </tr>
+                <tr>
+                    <td><b>链接</b>∞:</td>
+                    <td>R<b>∞</b>S: 将两表根据条件链接在一起 
+                        <p>自然链接 </p>
+                        <p>浮动元组 </p>
+                        <p>外连接 </p>
+                        <p>左外连接⋊</p>
+                        <p>右外连接⋉</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>除</b>÷:</td>
+                    <td>T=R<b>÷</b>S: 则T集合包含所有在R集合中但不在S集合中的属性和值,
+                        <u>且T集合的元组与S的元组经过组合均能出现在R集合中</u></td>
+                </tr>
+            </table>
+        </article>
+    </div>
+</body>
+<script src="../JS/JavaScript_mode.js"></script>
+</html>

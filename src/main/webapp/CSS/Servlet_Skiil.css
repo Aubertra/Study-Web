@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "朱元体";
+    src: url("../资源/朱元体.ttf");
+}
+
+body{
+    overflow: visible;
+    font-family: "朱元体", sans-serif;
+    height: 100%;
+}
+
+.BackGround{
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* StateBar */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.StateBar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    height: 2em;
+    width: 100em;
+    line-height: 2em;
+    border-radius: 0.2em/0.2em;
+    text-align: center;
+    background: linear-gradient(rgba(255, 255, 255,0.8),rgba(255, 254, 247, 0.8),rgba(255, 248, 213, 0.8),rgba(255, 224, 71, 0.8),rgba(255, 213, 0, 0.8));
+    /* background: linear-gradient(rgba(255, 255, 255,0.8),rgba(176, 176, 176, 0.8),rgba(120, 120, 120, 0.8),rgba(57, 57, 57, 0.8),rgba(0, 0, 0, 0.8)); */
+    background-size: 500vh;
+    animation: StateBarAnimation 5s linear infinite;
+    z-index: 2;
+}
+
+@keyframes StateBarAnimation
+{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+header{
+    height: 2em;
+}
+
+/* MainPage */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+.MainPage{
+    overflow: auto;
+    scrollbar-color: rgba(0,0,0,0.4);
+    position: relative;
+    border-radius: 0.2em/0.2em;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    background-size: cover;
+    top: 1em;
+    bottom: 2em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90em;
+    height: 121em;
+    z-index: 0;
+}
+.BG {
+    position: absolute;
+    border-radius: 0.2em/0.2em;
+    background: url('../资源/概念人物(去背景).png') no-repeat center 0;
+    background-size: cover;
+    opacity: 0.6;
+    top: 4.5em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90em;
+    height: 120em;
+    z-index: 0;
+}
+
+table{
+    position: relative;
+    line-height: 1.2em;
+    left: 6em;
+}
+
+b{
+    color: orange;
+}
+
+article{
+    line-height: 0.3em;
+}
+
+article h1{
+    text-align: center;
+}
+
+article h3{
+    text-indent: 2em;
+}
+
+article h4{
+    text-indent: 4em;
+}
+
+article .ind_2{
+    text-indent: 2em;
+}
+
+article p{
+    text-indent: 6em;
+}
+
+/* scroll */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+::-webkit-scrollbar
+{
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+::-webkit-scrollbar-button
+{
+    background-color: rgba(0,0,0,0.6);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: rgba(255, 255, 255,0.2);
+    border-radius: 0.2em/0.2em;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background-color: rgba(255, 254, 247, 0.8);
+    border: 2px white solid;
+}
+
+::-webkit-scrollbar-thumb:active
+{
+    background-color: white;
+}
+
+body::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* footer */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+footer{
+    position: relative;
+    border-radius: 0.2em/0.2em;
+    top: 2em;
+    height: 2em;
+    line-height: 2em;
+    color: white;
+    background-color: black;
+    text-align: right;
+}

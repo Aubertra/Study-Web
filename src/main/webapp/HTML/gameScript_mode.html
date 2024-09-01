@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/gameScript_mode.css">
+    <title>游戏开发规划</title>
+</head>
+<body>
+    <div class="BackGround">
+        <video loop autoplay muted>
+            <source src="../资源/动漫星空.mp4" type="video/mp4">
+        </video>
+    </div>
+    <audio id="BGmusic" src="../资源/重复时.mp3" loop autoplay></audio>
+
+    <header>
+        <div class="StateBar">
+            Air_Stack
+        </div>
+    </header>
+    <div class="BG"></div>
+    <div class="MainPage">
+        <article>
+            <h1>游戏脚本模型</h1>
+            <h3>一.系统模块</h3>
+            <h4>1.帧率控制</h4>
+            <p>unity_API:Application.targetFrameRate = 每秒帧数;</p>
+            <p>帧率显示逻辑代码:</p>
+            <pre>
+                public class FrameRate_Show : MonoBehaviour
+                {
+                    public Text FPS_Text;
+
+                    float lastTime, curTime;
+                    int frameCount;
+
+                    private void Awake()
+                    {
+                        lastTime = Time.time;
+                        frameCount = 0;
+                    }
+
+                    private void update()
+                    {
+                        curTime = Time.time;
+                        frameCount++;
+                        if(curTime - lastTime >= 1)
+                        {
+                            string FPS = ((int)(frameCount / (curTime - lastTime))).ToSring(); 
+                            FPS_Text.text = FPS;
+                        }
+                    }
+                }
+            </pre>
+            <h4>2.音量控制</h4>
+            <p>unity_API:mixer.SetFlaot("声音类名", Mathf.Log10(SlideValue)*20);</p>
+            <p>unity组件:AudioMixer; </p>
+            <p>常用的音量数值控制公式:Mathf.Log10(SlideValue)*20;</p>
+            <p>音量控制代码:</p>
+            <pre>
+                public class MixerVolumeControl : MonoBehaviour
+                {
+                    public AudioMixer mixer;
+
+                    //挂载到控制滑块上
+                    void SetVolumeLevel(float SliderValue)
+                    {
+                        mixer.SetFloat("Voice_Group_Name", Mathf.Log10(SliderValue) * 20);
+                    }
+                }
+            </pre>
+            <h4>3.延迟检测</h4>
+            <p>unity_API:latency = (currentTime - lastInputTime).TotalMillisecond;</p>
+            <p>游戏响应延迟显示代码:</p>
+            <pre>
+                using System.Diagnostics;
+
+                public class Latency_Control : MonoBehaviour
+                {
+                    public Text latencyData;
+                    Stopwatch stopWatch;
+                    bool waitingForResponse;
+
+                    void Awake()
+                    {
+                        stopWatch = new Stopwatch();
+                    }
+
+                    void Update()
+                    {
+                        if(Input.anyKeyDown)
+                        {
+                            StartLatencyMeaturement();
+                        }
+                        if(waitingForResponse)
+                        {
+                            //操作代码
+                            SimulateResponse();
+                        }
+                    }
+
+                    void StartLatencyMeaturement()
+                    {
+                        stopWatch.Reset();
+                        stopWatch.Start();
+                        waitingForResponse = true;
+                    }
+
+                    void SimulateResponse()
+                    {
+                        if(Stopwatch.ElapsedMilliseconds >= 20)
+                        {
+                            stopWatch.Stop();
+                            latencyData = "Latency: "+Stopwatch.ElapsedMilliseconds.ToString();
+                            waitingForResponse = false;
+                        }
+                    }
+                }
+            </pre>
+
+            <!-- ======================================================================================================== -->
+            <h3>二·UI模块</h3>
+            <h4>1.UI坐标转换</h4>
+            <p>unity_API:RectTransformUnity.ScreenPointToLocalPointInRectangle( Transform transform <b>as</b> RectTransform, Vector3 Position,Camera camera, <b>out</b> Vector2 LocalPos);</p>
+            <p>作用：将屏幕坐标转化为指定矩形变换的内部坐标</p>
+            <p>参数说明:</p>
+            <pre>
+                Transform transform <b>as</b> RectTransform: 目标矩阵变换,transform变换为RectTransform;
+                Position: 屏幕坐标,相对于整个屏幕的位置;
+                Camera: 渲染相机,录制屏幕的相机;
+                <b>out</b> Vector2 LocalPos: 输出参数,转换完之后的坐标；
+            </pre>
+            <h4>2.检查点击是否在UI图像上</h4>
+
+
+            <!-- ======================================================================================================= -->
+            <h3>三.角色控制模块</h3>
+            <h4>1.角色移动</h4>
+            <p>unity_API:Rigibody.Velocity</p>
+            <p>作用；一个二维向量,代表物体的刚体组件的速度向量,能够实现物体的移动</p>
+            <p>代码示例:</p>
+            <pre>
+                //组件
+                public Rigibody rigibody;
+                public float moveSpeed;
+
+                //方法实现
+                float xMoveVector = Input.GetAxis("Horizontal");
+                rigibody.velocity = new Vector2(xMoveVector * moveSpeed, rigibody.velocity.y);
+            </pre>
+            <h4>2.角色冲刺</h4>
+            <p>unity_API:Vector3.MoveToWards(Vector3 orginPos,Vector3 targetPos,DeltaTime time.deltaTime)</p>
+            <p>参数说明:</p>
+            <pre>
+                orginPos: 初始位置,类型为transform.position;
+                targetPos: 目标位置,类型同上;
+                deltaTime: 移动时间,通常乘以倍数以控制速度;
+            </pre>
+        </article>
+    </div>
+    <footer>页脚</footer>
+</body>
+    <script src="../JS/gameScript_mode.js"></script>
+</html>
